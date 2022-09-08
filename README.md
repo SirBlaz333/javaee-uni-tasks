@@ -1,1 +1,1 @@
-This repository contains my implementation of JavaEE course tasks
+This repository contains my implementations of JavaEE course tasks
