@@ -11,6 +11,10 @@ public class Employee {
     private String surname;
     private Double salary;
 
+    public Employee() {
+        this.id = nextId++;
+    }
+
     public Employee(String name, String surname, Double salary) throws FieldLengthLimitException, IncorrectSalaryException {
         this.id = nextId++;
         setName(name);
@@ -55,5 +59,15 @@ public class Employee {
         if (field.length() > MAX_LENGTH) {
             throw new FieldLengthLimitException(FIELD_LIMIT_MESSAGE);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
