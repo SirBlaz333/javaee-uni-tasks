@@ -1,15 +1,15 @@
-package com.arsenii.task5.subtask2;
+package com.arsenii.task5.subtask2.shape;
 
 public class ShapeMaker {
-    public Circle drawCircle(){
+    public Shape drawCircle(){
         return new Circle();
     }
 
-    public Triangle drawTriangle(){
+    public Shape drawTriangle(){
         return new Triangle();
     }
 
-    public Square drawSquare(){
+    public Shape drawSquare(){
         return new Square();
     }
 }
