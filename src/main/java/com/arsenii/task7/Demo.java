@@ -19,6 +19,7 @@ public class Demo {
                 RaceFactory.create(new ElfFactory(), "Danmer Elf"),
                 CharacterTypeFactory.getType("Rogue"));
         character.setStats(Stats.generate());
+        character.addRaceBonuses();
 
         List<DataElement> dataElements = new ArrayList<>();
         dataElements.add(character);
@@ -35,6 +36,7 @@ public class Demo {
                 RaceFactory.create(new ElfFactory(), "Danmer Elf"),
                 CharacterTypeFactory.getType("Paladin"));
         character2.setStats(Stats.generate());
+        character2.addRaceBonuses();
 
         dataElements.clear();
         dataElements.add(character2);
