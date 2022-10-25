@@ -2,19 +2,19 @@ package com.arsenii.task6.character;
 
 import com.arsenii.task4.subtask2.StatEnum;
 import com.arsenii.task4.subtask2.Stats;
-import com.arsenii.task6.character.race.Race;
+import com.arsenii.task6.character.race.CharacterRace;
 import com.arsenii.task6.character.type.CharacterType;
 
 public class Character {
     private final String name;
-    private final Race race;
+    private final CharacterRace characterRace;
     private final CharacterType characterType;
     private Stats stats;
     private int health;
 
-    public Character(String name, Race race, CharacterType characterType) {
+    public Character(String name, CharacterRace characterRace, CharacterType characterType) {
         this.name = name;
-        this.race = race;
+        this.characterRace = characterRace;
         this.characterType = characterType;
         health = 0;
     }
@@ -32,7 +32,7 @@ public class Character {
         System.out.println(characterType.toString());
         System.out.println("Health: " + health);
         characterType.printMagic();
-        race.print();
+        characterRace.print();
         stats.printStats();
     }
 }

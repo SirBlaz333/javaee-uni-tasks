@@ -1,7 +1,7 @@
 package com.arsenii.task6.character.race.elf;
 
 import com.arsenii.task4.subtask2.Stats;
-import com.arsenii.task6.character.race.Race;
+import com.arsenii.task6.character.race.CharacterRace;
 import com.arsenii.task6.character.race.RaceAbstractFactory;
 
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class ElfFactory implements RaceAbstractFactory {
     }
 
     @Override
-    public Race create(String type) {
+    public CharacterRace create(String type) {
         return new Elf(type, statsMap.get(type));
     }
 }

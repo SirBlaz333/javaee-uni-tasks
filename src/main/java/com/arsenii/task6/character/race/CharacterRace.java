@@ -5,7 +5,7 @@ import com.arsenii.task4.subtask2.Stats;
 
 import java.util.Arrays;
 
-public abstract class Race {
+public abstract class CharacterRace {
     protected String name;
     protected Stats bonuses;
 

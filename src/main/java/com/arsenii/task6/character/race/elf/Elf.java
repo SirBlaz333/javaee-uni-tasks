@@ -1,9 +1,9 @@
 package com.arsenii.task6.character.race.elf;
 
 import com.arsenii.task4.subtask2.Stats;
-import com.arsenii.task6.character.race.Race;
+import com.arsenii.task6.character.race.CharacterRace;
 
-public class Elf extends Race {
+public class Elf extends CharacterRace {
     public Elf(String name, Stats bonuses){
         this.name = name;
         this.bonuses = bonuses;
