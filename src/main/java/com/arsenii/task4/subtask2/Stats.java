@@ -1,10 +1,14 @@
 package com.arsenii.task4.subtask2;
 
+import com.arsenii.task7.DataElement;
+import com.arsenii.task7.DataElementVisitor;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-public class Stats {
+public class Stats implements DataElement {
     private final Map<StatEnum, Integer> stats;
     private final Dice dice;
 
@@ -39,10 +43,24 @@ public class Stats {
     }
 
     public void printStats() {
-        Arrays.stream(StatEnum.values()).forEach(this::printStat);
+        System.out.println(this);
     }
 
-    private void printStat(StatEnum statEnum) {
-        System.out.println(statEnum.toString().toLowerCase() + ": " + stats.get(statEnum));
+    private String statToString(StatEnum statEnum) {
+        return statEnum.toString().toLowerCase() + ": " + stats.get(statEnum);
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.stream(StatEnum.values())
+                .map(this::statToString)
+                .map(s -> s.concat(System.lineSeparator()))
+                .reduce(String::concat)
+                .orElse(null);
+    }
+
+    @Override
+    public TreeMap<String, String> access(DataElementVisitor visitor) {
+        return visitor.visit(this);
     }
 }
