@@ -11,12 +11,9 @@ import com.arsenii.task6.character.race.elf.ElfFactory;
 import com.arsenii.task6.character.type.CharacterTypeFactory;
 import com.arsenii.task7.DataElementVisitor;
 import com.arsenii.task7.ElementVisitor;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 
 public class CharacterModel {
     private static CharacterModel characterModel;

@@ -7,6 +7,8 @@ import com.arsenii.task6.character.Character;
 import com.arsenii.task7.DataElement;
 import org.json.simple.JSONObject;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
@@ -93,6 +95,11 @@ public class CharacterController {
         }
         json = json.concat("]");
         gui.JSONTextArea.setText(json);
+        try (FileWriter fileWriter = new FileWriter("output.json")) {
+            fileWriter.write(json);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void printSelectedCharacter(){
