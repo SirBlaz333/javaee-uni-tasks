@@ -1,12 +1,6 @@
 package com.arsenii.task8;
 
-import com.arsenii.task6.character.Character;
-
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
     private final CharacterController characterController;
