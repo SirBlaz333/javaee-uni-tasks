@@ -1,10 +1,12 @@
 package com.arsenii.task7;
 
+import com.arsenii.task4.subtask2.StatEnum;
 import com.arsenii.task4.subtask2.Stats;
 import com.arsenii.task6.character.Character;
 import com.arsenii.task6.character.race.CharacterRace;
 import com.arsenii.task6.character.type.CharacterType;
 
+import java.util.Arrays;
 import java.util.TreeMap;
 
 public class ElementVisitor implements DataElementVisitor {
@@ -32,8 +34,9 @@ public class ElementVisitor implements DataElementVisitor {
 
     @Override
     public TreeMap<String, String> visit(Stats stats) {
-        TreeMap<String, String> treeMap = new TreeMap<>();
-        treeMap.put("Stats", stats.toString());
-        return treeMap;
+        TreeMap<String, String> statsMap = new TreeMap<>();
+        Arrays.stream(StatEnum.values()).
+                forEach(stat -> statsMap.put(stat.toString().toLowerCase(), Integer.toString(stats.getStatValue(stat))));
+        return statsMap;
     }
 }
